@@ -1,0 +1,718 @@
+<div class="row visible-lg visible-md">
+  <div class="col-lg-2" id="aside">
+    <div id="asideBack"></div>
+    <div id="asideFront">
+      <%= image_tag "logo.png", id: "logo" %>
+      <ul class="menu">
+        <li class="crimeSceneBtn"><%= image_tag "crimescene.jpg", class: "menuBtn", title: "Explore the Crime Scene" %></li>
+        <li class="charactersBtn"><%= image_tag "characters.jpg", class: "menuBtn", title: "Interview the Suspects" %></li>
+        <li class="caseBtn"><%= image_tag "brief.jpg", class: "menuBtn", title: "Solve the Case" %></li>
+      </ul>
+      <%= image_tag "casefile.png", style: "position:absolute; left:-20px;bottom:-280px; width:120%; display:none;", id: "caseFile" %>
+    </div>
+  </div>
+  <div class="col-lg-10">
+    <div class="row" id="contentRow">
+      <div id="contentPanel">
+        <div id="panelBack"></div>
+        <div id="panelFront">
+          <div id="panelTitle"></div>
+          <div id="caseName" class="casePanel">
+            <div class="row">
+              The Case of the Killer Beach
+              <%= image_tag "crimeTape.png" %>
+            </div>
+            <div class="row">
+              <div class="col-lg-6"></div>
+              <div class="col-lg-6" id="briefing">
+                An otherwise tuneful beach shack broke into chaos one night. Amidst the upheaval, something awful has taken place.
+                <br/>
+                <br/>
+                Clayton Athogias was a bartender for a living - a pleasant fellow, a favorite with the guests and the love of Leona's life.
+                <br/>
+                <br/>
+                But something had been troubling him lately and whatever it was, it spelled doom. His body was washed to the shore early one morning.
+                <br/>
+                <br/>
+              </div>
+            </div>
+          </div>
+          <div id="crimeScene" class="casePanel">
+            <div class="row">
+              <div class="col-lg-5 crimeSceneOverlay lvl1">
+                <%= image_tag "lvl1.jpg" %>
+                <h4 class="clue">Explore the crime scene by hovering over the
+                  photos and clicking on the interesting spots.</h4>
+              </div>
+              <div class="col-lg-3 crimeSceneOverlay lvl2">
+              </div>
+              <div class="col-lg-3 crimeSceneOverlay lvl3">
+              </div>
+            </div>
+          </div>
+          <div id="characters" class="casePanel">
+            <div class="row" id="charMenu"></div>
+            <div id="suspectPanel">
+              <div class="row">
+                <div class="col-lg-4"><img src="#" id="suspectPhoto"/></div>
+                <div class="col-lg-7">
+                  <div class="row">
+                    <div id="suspectName"></div>
+                    <%= image_tag "interrogate.png", id: "interrogateEm", style: "position:absolute; width:20%;right:0;top:30px;cursor:pointer;", title: "Interrogate the Person" %>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-7" id="suspectProfile"></div>
+                    <div class="col-lg-5" id="suspectReaction"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="comments" class="casePanel">
+            <br/>
+            <br/>
+
+            <div class="row">
+              <div class="col-lg-10" id="commentsBack">
+                <div class="row" style="margin-left: 20px;">
+                  <div class="col-lg-12" style="border-bottom: 1px solid #333">
+                    <textarea id="u_0_c" aria-owns="typeahead_list_u_0_b" aria-expanded="false" autocomplete="off" aria-autocomplete="list" role="textbox" name="text" placeholder="Who is the killer and why did they do it?" required="1" class="DOMControl_placeholder uiTextareaNoResize uiTextareaAutogrow input mentionsTextarea textInput"></textarea>
+                    <input type="submit" id="u_0_2" value="Comment" class="btn btn-warning btn-sm pull-right u_0_2" style="margin-bottom: 10px">
+                  </div>
+                </div>
+                <br/>
+
+                <div class="row">
+                  <div class="col-lg-12" id="commentsWrapper">
+                    <ul id="allist" class="UFIList"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Phone Code -->
+
+<div class="row hidden-md hidden-lg ">
+  <div class="row" style="margin-top: 5%" id="menu-xs">
+    <div class="col-xs-5 col-xs-offset-1 col-sm-5 col-sm-offset-1">
+      <%= image_tag "logo-xs.png", id: "logo-xs" %>
+    </div>
+    <div class="col-xs-5 col-sm-5" id="header-xs">
+      <div id="panelTitle-xs"></div>
+      <a href="#" id="backToMain"><img src="/assets/back.gif" style="width:50%"/></a>
+    </div>
+  </div>
+
+  <div id="contentRow-xs">
+    <div class="row casePanel-xs" id="title-xs">
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2">
+          <br/>
+          <br/>
+
+          <h1 id="caseName-xs">The Case of the Killer Beach</h1>
+          <br/>
+          <br/>
+          <div class="row">
+            <%= image_tag "start.png",class:"col-sm-4 col-xs-4", onclick:"$(this).parent().parent().fadeOut();$('#caseProfile-xs').fadeIn().animate({opacity:'1'},500);"%>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="caseProfile-xs">
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2">
+            An otherwise tuneful beach shack broke into chaos one night. Amidst the upheaval, something awful has taken place.
+            <br/>
+            <br/>
+            Clayton Athogias was a bartender for a living - a pleasant fellow, a favorite with the guests and the love of Leona's life.
+            <br/>
+            <br/>
+            But something had been troubling him lately and whatever it was, it spelled doom. His body was washed to the shore early one morning.
+            <br/>
+            <br/>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 menu">
+            <div class="row">
+              <div class="crimeSceneBtn col-sm-4 nopad"><%= image_tag "crimescene.jpg", class: "menuBtn-xs" %>
+                <div class="help-xs">Crime Scene</div>
+              </div>
+              <div class="charactersBtn col-sm-4 nopad"><%= image_tag "characters.jpg", class: "menuBtn-xs" %>
+                <div class="help-xs">Characters</div>
+              </div>
+              <div class="caseBtn col-sm-4 nopad"><%= image_tag "brief.jpg", class: "menuBtn-xs" %>
+                <div class="help-xs">Solve It</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row casePanel-xs" id="crimeScene-xs">
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 crimeSceneOverlay lvl1">
+          <%= image_tag "lvl1.jpg" %>
+        </div>
+        <div class="col-xs-7 col-xs-offset-3 col-sm-7 col-sm-offset-3 crimeSceneOverlay lvl2 lvl2-xs">
+        </div>
+        <div class="col-xs-6 col-xs-offset-4 col-sm-6 col-sm-offset-4 crimeSceneOverlay lvl3 lvl3-xs">
+        </div>
+      </div>
+      <br/>
+
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 crimeSceneInstruction">
+          <h4 class="clue">The victim was found in the washed up on the beach. But I'm sure he wasn't murdered on the beach...that must have happened close by. Explore the crime scene by tapping over interesting spots in the photographs.</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="row casePanel-xs" id="characters-xs">
+      <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2">
+        <div class="row">
+          <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1">
+            <div id="carousel-characters" class="carousel slide" data-interval="false">
+              <!-- Indicators -->
+
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner" id="carouselBlocks"></div>
+
+              <!-- Controls -->
+              <a class="left carousel-control" href="#carousel-characters" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="right carousel-control" href="#carousel-characters" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+            </div>
+            <%= image_tag "interrogate.png", id: "interrogateEm-xs", style: "position:absolute; width:50%;right:-2em;top:1em;" %>
+          </div>
+        </div>
+        <div class="row" id="suspectPanel-xs">
+          <div id="suspectName-xs"></div>
+          <div id="suspectProfile-xs"></div>
+          <div id="suspectReaction-xs"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row casePanel-xs" id="comments-xs">
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2" id="commentsBack-xs">
+          <div class="row">
+            <textarea id="u_0_c-xs" aria-owns="typeahead_list_u_0_b" aria-expanded="false" autocomplete="off" aria-autocomplete="list" role="textbox" name="text" placeholder="Who is the killer and why did they do it?" required="1" class="DOMControl_placeholder uiTextareaNoResize uiTextareaAutogrow input mentionsTextarea textInput"></textarea>
+            <input type="submit" id="u_0_2-xs" value="Comment" class="btn btn-warning btn-xs pull-right u_0_2">
+          </div>
+          <br/>
+
+          <div class="row">
+            <div id="commentsWrapper-xs">
+              <ul id="allist-xs" class="UFIList"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script type="text/javascript" charset="utf-8">
+
+    /*-----------------------------------------*/
+    /* Case Input Structures Left,Top,Width,Height%*/
+    /*-----------------------------------------*/
+
+    var lvl1Nodes = ["30,55,15,8", "60,12,37,61"];
+    var lvl1Data = ["Look what the sea threw up on a rainy morning...||body.jpg||This body was found lying on the shore...", "That shack looks open but I don’t see anybody inside. I should go take a look||shack.jpg ||What the hell happened here? Looks like there's been a fight.."];
+    var lvl2Nodes = [
+        ["22,39,19,14", "44,35,19,12", "62,27,14,6"],
+        ["13,32,14,10", "81,11,8,22", "69,52,14,9"]
+    ];
+    var lvl2Data = [
+        ["There's a wound on his head Looks like somebody hit him||cut.jpg||There's some oily residue, looks like some kind of balm", "How did he die? I should investigate further||xray.jpg||His lungs are filled with water. He must have drowned to death", "What's that over there?||bracelet.jpg||I beaded bracelet. Where did he get this from?"],
+        ["There's something on this broken bottle||glass.jpg||Blood, looks like this is what he was hit with", "This mark here on the wall looks very familiar to me||bullet.jpg ||A gun shot, I thought as much, here's the bullet", "What's this shiny thing here? It has a note with it||ring.jpg||A diamond ring with a note that says ' I\'m sorry, but there\'s no other way '"]
+    ];
+
+    var suspectNames = ['Clayton Athogias, Victim', 'Timothy, Beachbum','Vikram Jain, DJ', 'Leona Fernandes, Hippie', 'Robert Alvares, Local Don', 'Joseph D\'Souza, Shack Owner'];
+    var suspectPhotos = ['/assets/bartender.jpg', '/assets/beachbum.jpg', '/assets/dj.jpg', '/assets/hippiegirl.jpg', '/assets/don.jpg', '/assets/owner.jpg'];
+    var suspectBios = ['Nice guy, everyone liked him. He had a bad liver but couldn\'t stop drinking. He and Joe bikered a lot when they got drunk. Leona was obsessively in love with him. They were in a relationship till recently. He ended it  but they continued to be friends.',
+        'He spends every night outside Cheap Joe\'s, lights himself a fire when it gets cold. They give him leftovers and he sells the empty bottles for some money. Clayton would spend hours talking to him by the fire after work on some nights and even sleep off there. He knows a lot about herbal medicine.',
+        'A very talented kid. Quit his job and came here to become a DJ. Lives with a few friends in a cottage nearby. Doesn\'t really talk to anyone, comes in, spins and leaves. He has a bad temper and often gets into fights with tourists. Joe doesn\'t like the way he keeps eyeing Leona. Clayton didn\'t like it either. They\'ve fought a couple of times but it never got physical.',
+        'She has been staying in the quarters behind the shack for a really long time. She makes junk jewellery and sells it at the shack. She hasn\'t paid rent for the longest time. He wouldv\'e turned her out long ago if it wasn\'t for Clayton. ',
+        'He was dangerous, throwing his weight around and troubling shack owners for a cut of their sales, he had been in for murder twice but gotten off. He got free food and alcohol at this shack. He hated Clayton\'s guts and kept trying to provoke him. He had been chasing Leona for a while but she showed no interest.',
+        'He belongs to this town. Has been running the shack for years. He has no family. Everyone knows him as a friendly and good fellow. His shack has the best and cheapest food in town and great deals on alcohol as well. He has made a fortune running it. He and Clayton bickered quite often but they always made up later.'];
+    var suspectReactions = ['',
+        'Clayton had just gone inside with his drink. In a few minutes, people were yelling and breaking things. I heard a gunshot and ran away. I saw Joe and Leona later, she looked very worried. Women just know when something bad is going to happen.',
+        'Robert started picking on Clayton for drinking a fruit cocktail. It was hilarious, but Clayton didn’t find it funny. They got into a fight and it went out of hand. I saw Leona crying out back while leaving. I\'m glad he\'s dead, I\'d have done it sooner or later.',
+        'Joe is the reason Clayton drank so much. It was poison for him. A few days ago he fainted and we rushed him to the hospital. I can\'t believe I\'ve lost him. Timothy\'s buying been a whole lot of new stuff all of a sudden. He doesn’t come here much now.',
+        'He usually didn\'t back talk but that night he almost hit me. I don\'t take that shit. Told my guys to give him a face lift, but he got away. Yeah I shot at him but  it missed.  He ran off like a sissy. I went looking for him but couldn\'t find him anywhere.',
+        'I tried my best to calm Robert and his guys down but they just wouldn\'t listen. They totally destroyed my place. Clayton\'s head was still bleeding when they left. Leona was with him when I shut down and went home.',
+        ];
+
+    /*-----------------------------------------*/
+    /* Case Variables Initializer*/
+    /*-----------------------------------------*/
+
+    var crimeSceneInit = false;
+    var suspectListInit = false;
+
+    var overlayLvl1 = [];
+    var srcLvl2 = [];
+    var overlayLvl2 = [
+        [],
+        [],
+        []
+    ];
+    var srcLvl3 = [
+        [],
+        [],
+        []
+    ];
+
+    var lvl2Clues, lvl2CluePosy;
+
+    function createCrimeScene() {
+        var coordsLvl1 = [];
+        var contentLvl1 = [];
+        var coordsLvl2 = [
+            [],
+            [],
+            []
+        ];
+        var contentLvl2 = [
+            [],
+            [],
+            []
+        ];
+        for (var nodeLvl1 = 0; nodeLvl1 < lvl1Nodes.length; nodeLvl1++) {
+            coordsLvl1[nodeLvl1] = lvl1Nodes[nodeLvl1].split(',');
+            contentLvl1[nodeLvl1] = lvl1Data[nodeLvl1].split('||');
+            overlayLvl1[nodeLvl1] = '<a href="#" title="' + contentLvl1[nodeLvl1][0] + '" class="overlayPoint" id="node1' + nodeLvl1 + '" style="left:' + coordsLvl1[nodeLvl1][0] + '%;top:' + coordsLvl1[nodeLvl1][1] + '%;width:' + coordsLvl1[nodeLvl1][2] + '%;height:' + coordsLvl1[nodeLvl1][3] + '%;"></a>';
+            srcLvl2[nodeLvl1] = '<img src="/assets/' + contentLvl1[nodeLvl1][1] + '"/><h4 class="clue">' + contentLvl1[nodeLvl1][2] + '</h4>';
+            for (var nodeLvl2 = 0; nodeLvl2 < lvl2Nodes[nodeLvl1].length; nodeLvl2++) {
+                coordsLvl2[nodeLvl1][nodeLvl2] = lvl2Nodes[nodeLvl1][nodeLvl2].split(',');
+                contentLvl2[nodeLvl1][nodeLvl2] = lvl2Data[nodeLvl1][nodeLvl2].split('||');
+                overlayLvl2[nodeLvl1][nodeLvl2] = '<a href="#" title="' + contentLvl2[nodeLvl1][nodeLvl2][0] + '" class="overlayPoint" id="node2_' + nodeLvl1 + "_" + nodeLvl2 + '" style="left:' + coordsLvl2[nodeLvl1][nodeLvl2][0] + '%;top:' + coordsLvl2[nodeLvl1][nodeLvl2][1] + '%;width:' + coordsLvl2[nodeLvl1][nodeLvl2][2] + '%;height:' + coordsLvl2[nodeLvl1][nodeLvl2][3] + '%;"></a>';
+                srcLvl3[nodeLvl1][nodeLvl2] = '<img src="/assets/' + contentLvl2[nodeLvl1][nodeLvl2][1] + '"/><h4 class="clue">' + contentLvl2[nodeLvl1][nodeLvl2][2] + '</h4>';
+            }
+        }
+    }
+
+    function overlayLvl2Bindings() {
+        $("[id^=node1]").on('click', function () {
+            var branch = parseInt($(this).attr("id").split("node1")[1]);
+            var $lvl2 = $('.crimeSceneOverlay.lvl2');
+            var $lvl3 = $('.crimeSceneOverlay.lvl3');
+            $lvl2.hide().empty();
+            $lvl3.hide().empty();
+            $lvl2.append(srcLvl2[branch]).fadeIn('500');
+            overlayLvl2[branch].forEach(function (elm) {
+                $lvl2.append(elm);
+                $('[title!=""]').qtip({
+                    position: {
+                        my: 'bottom left',  // Position my top left...
+                        at: 'top right', // at the bottom right of...
+                        target: 'mouse' // my target
+                    }
+                });
+            });
+            overlayLvl3Bindings();
+        });
+    }
+    function overlayLvl2BindingsXs() {
+        $("[id^=node1]").on('click', function () {
+            var branch = parseInt($(this).attr("id").split("node1")[1]);
+            var $lvl1 = $('.crimeSceneOverlay.lvl1');
+            var $lvl2 = $('.crimeSceneOverlay.lvl2');
+            var $lvl3 = $('.crimeSceneOverlay.lvl3');
+            var $notes = $('.crimeSceneInstruction');
+            $notes.html('<h4 class="clue">' + $(this).attr('title') + '</h4>');
+            $lvl2.hide().empty();
+            $lvl3.hide().empty();
+            $lvl1.hide();
+            $lvl2.append('<img id="back1" src="' + $('.crimeSceneOverlay.lvl1 img').first().attr('src') + '" onclick="goBack1()"/>');
+            $lvl2.append(srcLvl2[branch]).delay(500).fadeIn('500');
+            $notes.append($lvl2.find('.clue').first());
+            $lvl2.find('.clue').css('opacity', '0');
+            lvl2CluePosy = "-" + $lvl2.find('.clue').outerHeight() + "px";
+            $notes.animate({
+                marginTop: lvl2CluePosy
+            });
+            overlayLvl2[branch].forEach(function (elm) {
+                $lvl2.append(elm);
+            });
+            overlayLvl3BindingsXs();
+        });
+    }
+
+    function goBack1() {
+        $('.crimeSceneOverlay.lvl2').hide().empty();
+        $('.crimeSceneOverlay.lvl1').fadeIn();
+        $('.crimeSceneInstruction').html('<h4 class="clue">The victim was found in the makeup room. Explore the crime scene by tapping over interesting spots in the photographs.</h4>').animate({marginTop: '0'});
+    }
+    function goBack2() {
+        $('.crimeSceneOverlay.lvl2').hide().empty();
+        $('.crimeSceneOverlay.lvl3').hide().empty();
+        $('.crimeSceneOverlay.lvl1').fadeIn();
+        $('.crimeSceneInstruction').html('<h4 class="clue">The victim was found in the makeup room. Explore the crime scene by tapping over interesting spots in the photographs.</h4>').animate({marginTop: '0'});
+    }
+    function goBack3() {
+        $('.crimeSceneOverlay.lvl3').hide().empty();
+        $('.crimeSceneOverlay.lvl2').fadeIn();
+        $('.crimeSceneInstruction').html(lvl2Clues).animate({marginTop: lvl2CluePosy});
+    }
+
+    function overlayLvl3Bindings() {
+        $("[id^=node2]").on('click', function () {
+            var root = parseInt($(this).attr("id").split("_")[1]);
+            var branch = parseInt($(this).attr("id").split("_")[2]);
+            var $lvl3 = $('.crimeSceneOverlay.lvl3');
+            $lvl3.hide().empty();
+            $lvl3.append(srcLvl3[root][branch]).fadeIn('500');
+        });
+    }
+    function overlayLvl3BindingsXs() {
+        $("[id^=node2]").on('click', function () {
+            var root = parseInt($(this).attr("id").split("_")[1]);
+            var branch = parseInt($(this).attr("id").split("_")[2]);
+            var $lvl3 = $('.crimeSceneOverlay.lvl3');
+            lvl2Clues = $('.crimeSceneInstruction').html();
+            $('.crimeSceneInstruction').html('<h4 class="clue">' + $(this).attr('title') + '</h4>');
+            $('.crimeSceneOverlay.lvl2').hide();
+            $lvl3.hide().empty();
+            $lvl3.append('<img id="back2" src="' + $('.crimeSceneOverlay.lvl1 img').eq(0).attr('src') + '" onclick="goBack2()"/>');
+            $lvl3.append('<img id="back3" src="' + $('.crimeSceneOverlay.lvl2 img').eq(1).attr('src') + '" onclick="goBack3()"/>');
+            $lvl3.append(srcLvl3[root][branch]).fadeIn('500');
+            $('.crimeSceneInstruction').append($lvl3.find('.clue').first());
+            $lvl3.find('.clue').css('opacity', '0');
+            $('.crimeSceneInstruction').animate({
+                marginTop: "-" + $lvl3.find('.clue').outerHeight() + "px"
+            });
+
+        });
+    }
+
+    function buildSuspects() {
+        if (!suspectListInit) {
+            $('#charMenu').append('<div class="col-lg-' + (11 - suspectPhotos.length) + '"></div>');
+            for (i = 0; i < suspectPhotos.length; i++) {
+                $('#charMenu').append('<div class="col-lg-1 suspectThumb"><img src="' + suspectPhotos[i] + '" id="suspect' + i + '"/></div>');
+            }
+            suspectListInit = true;
+        }
+        $('.suspectThumb img').on('click', function () {
+            var index = $(this).attr("id").split('suspect')[1];
+            $('#suspectPhoto').attr('src', suspectPhotos[index]);
+            $('#suspectName').html(suspectNames[index].split(',')[0] + "<br/><span id='suspectContext'>" + suspectNames[index].split(',')[1] + "</span>");
+            $('#suspectProfile').html(suspectBios[index]);
+            $('#suspectReaction').html(suspectReactions[index]).hide();
+            if (index == 0) {
+                $('#interrogateEm').fadeOut();
+            } else {
+                $('#interrogateEm').fadeIn().qtip({
+                    position: {
+                        my: 'bottom left',  // Position my top left...
+                        at: 'top right', // at the bottom right of...
+                        target: 'mouse' // my target
+                    }
+                });
+            }
+        });
+    }
+
+    function buildSuspectsXs() {
+        if (!suspectListInit) {
+            for (i = 0; i < suspectPhotos.length; i++) {
+                $('#carouselBlocks').append('<div class="item suspectThumb-xs"><img src="' + suspectPhotos[i] + '" id="suspect' + i + '"/></div>');
+            }
+            suspectListInit = true;
+            $('.item').first().addClass('active');
+            $('#suspectName-xs').html(suspectNames[0].split(',')[0] + "<br/><span id='suspectContext-xs'>" + suspectNames[0].split(',')[1] + "</span>");
+            $('#suspectProfile-xs').html(suspectBios[0]);
+            $('#suspectReaction-xs').html('<span class="closeInter">&times;<span>' + suspectReactions[0]).hide();
+        }
+
+        var carousel = $('#carousel-characters').carousel({
+            wrap: false,
+            threshold: 0
+        });
+
+        $(".carousel-inner").swipe({
+            swipeLeft: function (event, direction, distance, duration, fingerCount) {
+                $(this).parent().carousel('next');
+            },
+            swipeRight: function () {
+                $(this).parent().carousel('prev');
+            }
+        });
+
+        carousel.on('slide.bs.carousel', function (event) {
+            var index = $(event.relatedTarget).index();
+            stopInterro();
+            $('#suspectName-xs').html(suspectNames[index].split(',')[0] + "<br/><span id='suspectContext-xs'>" + suspectNames[index].split(',')[1] + "</span>");
+            $('#suspectProfile-xs').html(suspectBios[index]);
+            $('#suspectReaction-xs').html('<span class="closeInter" onclick="stopInterro();">&times;</span>' + suspectReactions[index]).hide();
+            if (index == 0) {
+                $('#interrogateEm-xs').fadeOut();
+            } else {
+                $('#interrogateEm-xs').fadeIn();
+            }
+        });
+
+    }
+
+    function stopInterro() {
+        $('#interrogateEm-xs').show();
+        $('#suspectReaction-xs').hide();
+        $('#suspectProfile-xs').fadeIn();
+    }
+
+    $.fn.activatePanel = function () {
+        $('.casePanel').css({pointerEvents: 'none'});
+        $('.casePanel-xs').css({pointerEvents: 'none'});
+        $(this).animate({opacity: '1'});
+        $(this).css({pointerEvents: 'auto'});
+        $('#caseFile').css('opacity', '1').fadeIn();
+    };
+
+    function comment_now(at) {
+        var message = $('#u_0_c').val();
+	if(message == ""){
+	    message =$('#u_0_c-xs').val();	
+	}
+        var obj_id = '1451967905032468';
+        FB.login(function (response) {
+            if (response.authResponse) {
+                at = response.authResponse.accessToken;
+                $.post('https://graph.facebook.com/' + obj_id + '/comments?message=' + message + '&access_token=' + at, function (respo) {
+                    alert("Your comment has been posted on this week's case photo. Go check it out!");
+                    setTimeout(function () {
+                        present_comment();
+                        $('#u_0_c').val('');
+                    }, 500);
+
+                });
+            }
+        }, {scope: 'publish_stream,publish_actions'});
+    }
+    ;
+
+    function fb_comment() {
+        var at = '';
+	FB.getLoginStatus(function (response) {
+	    if (response.status == "connected") {
+                at = response.authResponse.accessToken;
+                comment_now();
+
+            }
+            else if (response.status == "notConnected") {
+                FB.ui({
+                    client_id: '113381182103752',
+                    method: 'oauth',
+                    redirect_uri: 'http://www.detectime.com',
+                    response_type: 'token',
+                    perms: 'publish_stream,publish_actions'
+                }, function (res) {
+                    at = res.access_token;
+                    comment_now();
+                });
+            }
+            else if (response.status == "unknown") {
+                comment_now();
+            }
+            else {
+                comment_now();
+            }
+        });
+    }
+
+    function present_comment() {
+        $.get('https://graph.facebook.com/1451967905032468/comments', function (res) {
+            $('.prev_comments').empty().remove();
+            $.each(res.data, function (i, v) {
+                hr = "https://www.facebook.com/" + v.from.id;
+                pic = "https://graph.facebook.com/" + v.from.id + "/picture"
+                $('#allist').append('<li class="prev_comments"><div class="row"><div class="given_pic">' +
+                        '<a href="' + hr + '" class="pull-right prev_comm">' +
+                        '<img src="' + pic + '" alt=""/></a></div> <div class="given_comment">' +
+                        '<a class="fbName" href="' + hr + '">' + v.from.name + '</a>  ' + v.message +
+                        '<p>' + get_time_diff(v.created_time) + '</p></div></div></li>');
+                $('#allist-xs').append('<li class="prev_comments"><div class="row"><div class="given_pic">' +
+                        '<a href="' + hr + '" class="pull-right prev_comm">' +
+                        '<img src="' + pic + '" alt=""/></a></div> <div class="given_comment">' +
+                        '<a class="fbName" href="' + hr + '">' + v.from.name + '</a>  ' + v.message +
+                        '<p>' + get_time_diff(v.created_time) + '</p></div></div></li>');
+            });
+            $("#commentsWrapper").niceScroll();
+        })
+    }
+
+    function get_time_diff(datetime) {
+        var datetime = typeof datetime !== 'undefined' ? datetime : "2014-01-01 01:02:03.123456";
+
+        var datetime = new Date(datetime).getTime();
+        var now = new Date().getTime();
+
+        if (isNaN(datetime)) {
+            return "";
+        }
+
+        if (datetime < now) {
+            var milisec_diff = now - datetime;
+        } else {
+            var milisec_diff = datetime - now;
+        }
+
+        var days = Math.floor(milisec_diff / 1000 / 60 / (60 * 24));
+
+        var date_diff = new Date(milisec_diff);
+
+        if (days > 0) {
+            return days + " days ago"
+        } else if ((date_diff.getHours() - 5) > 0) {
+            return (date_diff.getHours() - 5) + " hours ago"
+        } else if ((date_diff.getMinutes() - 30) > 0) {
+            return (date_diff.getMinutes() - 30) + " minutes ago"
+        } else {
+            return "few seconds ago"
+        }
+
+    }
+
+
+    $(function () {
+
+        present_comment();
+
+        $('.menuBtn').qtip({
+            position: {
+                my: 'bottom left',  // Position my top left...
+                at: 'top right', // at the bottom right of...
+                target: 'mouse' // my target
+            }
+        });
+
+        $('.crimeSceneBtn .menuBtn').on('click', function () {
+            $('.casePanel').animate({opacity: '0'}, '500', function () {
+                $('#crimeScene').activatePanel();
+                $('#panelTitle').html("Crime Scene");
+                if (!crimeSceneInit) {
+                    createCrimeScene();
+                    overlayLvl1.forEach(function (elm) {
+                        $('.crimeSceneOverlay.lvl1').append(elm);
+                        $('[title!=""]').qtip({
+                            position: {
+                                my: 'bottom left',  // Position my top left...
+                                at: 'top right', // at the bottom right of...
+                                target: 'mouse' // my target
+                            }
+                        });
+                    });
+                    overlayLvl2Bindings();
+                }
+                crimeSceneInit = true;
+            });
+        });
+        $('.charactersBtn .menuBtn').on('click', function () {
+            buildSuspects();
+            $('.casePanel').animate({opacity: '0'}, '500', function () {
+                $('#panelTitle').html("Character Backgrounds");
+                $('#characters').activatePanel();
+                $('#suspectPhoto').attr('src', suspectPhotos[0]);
+                $('#suspectName').html(suspectNames[0].split(',')[0] + "<br/><span id='suspectContext'>" + suspectNames[0].split(',')[1] + "</span>");
+                $('#suspectProfile').html(suspectBios[0]);
+                $('#interrogateEm').hide();
+                $('#suspectReaction').hide();
+
+            });
+        });
+
+        $('#interrogateEm').on('click', function () {
+            $('#suspectReaction').fadeIn();
+        });
+
+        $('#caseFile').on('click', function () {
+            $('.casePanel').animate({opacity: '0'}, '500', function () {
+                $('#panelTitle').html("");
+                $('#caseName').activatePanel();
+                $('#caseFile').css('opacity', '0');
+            });
+        });
+
+        $('.caseBtn .menuBtn').on('click', function () {
+            $('.casePanel').animate({opacity: '0'}, '500', function () {
+                $('#panelTitle').html("Solve the Case");
+                $('#comments').activatePanel();
+                $('#caseFile').css('opacity', '0');
+            });
+        });
+
+        $('.u_0_2').on('click', function () {
+            if ($('#u_0_c').val() != "" || $('#u_0_c-xs').val()!="") {
+                fb_comment();
+            }
+            return false;
+        });
+
+        /* Code for the Phone*/
+
+        $('.crimeSceneBtn .menuBtn-xs').on('click', function () {
+            $('.casePanel-xs').animate({opacity: '0'}, '500', function () {
+                $('#crimeScene-xs').activatePanel();
+                $('#panelTitle-xs').html("Crime Scene");
+                $('#header-xs').fadeIn();
+                if (!crimeSceneInit) {
+                    createCrimeScene();
+                    overlayLvl1.forEach(function (elm) {
+                        $('.crimeSceneOverlay.lvl1').append(elm);
+                    });
+                    overlayLvl2BindingsXs();
+
+                }
+                crimeSceneInit = true;
+            });
+        });
+        $('.charactersBtn .menuBtn-xs').on('click', function () {
+            $('.casePanel-xs').animate({opacity: '0'}, '500', function () {
+                buildSuspectsXs();
+                $('#characters-xs').activatePanel();
+                $('#panelTitle-xs').html("Characters");
+                $('#header-xs').fadeIn();
+            });
+        });
+        $('.caseBtn .menuBtn-xs').on('click', function () {
+            $('.casePanel-xs').animate({opacity: '0'}, '500', function () {
+                $('#comments-xs').activatePanel();
+                $('#panelTitle-xs').html("Solve It");
+                $('#header-xs').fadeIn();
+            });
+        });
+
+        $('#backToMain').on('click', function () {
+            $('.casePanel-xs').animate({opacity: '0'}, '500', function () {
+                $('#panelTitle').html("");
+                $('#title-xs').activatePanel();
+                $('#header-xs').fadeOut();
+            });
+        });
+
+        $('#interrogateEm-xs').on('click', function () {
+            $(this).hide();
+            $('#suspectProfile-xs').hide();
+            $('#suspectReaction-xs').fadeIn();
+        });
+
+
+    })
+</script>
